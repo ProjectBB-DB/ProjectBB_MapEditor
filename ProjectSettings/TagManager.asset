@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - TilemapForVisual
+  - TilemapForData
+  - TilemapForGuideUI
+  - TilemapForGridGuide
+  - Goal
+  - InGameUI
+  - BlockDNDManager
+  - DataManager
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - MovableBlock
+  - UnitCollider
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Hero
+    uniqueID: 4014608613
+    locked: 0
+  - name: Goal
+    uniqueID: 3126846903
+    locked: 0
+  - name: Static
+    uniqueID: 3624195771
+    locked: 0
+  - name: GridGuide
+    uniqueID: 135438119
+    locked: 0
+  - name: Movable
+    uniqueID: 425244973
+    locked: 0
+  - name: GuideUI
+    uniqueID: 2108879741
+    locked: 0
