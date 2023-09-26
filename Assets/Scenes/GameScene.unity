@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 214182188}
   - component: {fileID: 214182187}
   m_Layer: 0
-  m_Name: SaveRoundData
+  m_Name: '[SaveRoundData]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2419,7 +2419,7 @@ GameObject:
   - component: {fileID: 1892184095}
   - component: {fileID: 1892184094}
   m_Layer: 0
-  m_Name: GridSet
+  m_Name: '[GridSet]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

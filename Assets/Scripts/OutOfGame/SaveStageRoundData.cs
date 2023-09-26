@@ -155,31 +155,40 @@ public class AllDataStorage
 public class SaveStageRoundData : MonoBehaviour
 {
     #region DataVariablesForSaveMap
-    // 아래 변수 들은 인 게임에서 사용될 변수가 아닙니다.
-    // 맵을 제작하기 위해 '인스펙터'에서 등록해주어야할 변수들 입니다.
-    //현재 '스테이지' 와 '라운드'
+    [Header("<맵 생성을 위한 변수 등록>")]
+
+    [Header("====라운드 속성====")]
+    [Tooltip("현재 '스테이지' 와 '라운드'")]
     [SerializeField] private int stage;
     [SerializeField] private int round;
 
-    // 현재 라운드의 바닥 깊이
+    [Tooltip("현재 라운드의 바닥 깊이")]
     [SerializeField] private float floorDepth;
 
-    // 현재 라운드의 성공 조건 (목표에 도달한 영웅들의 기준 수)
+    [Tooltip("현재 라운드의 성공 조건 (목표에 도달한 영웅들의 기준 수)")]
     [SerializeField] private int succedStandard;
+    // [Space(3)]
 
-    // 데이터를 받아올 현재 타일 맵
+    [Header("====타일 맵====\n" +
+            "Hierarchy에 등록된 [GridSet]의 자녀로 등록된\n" +
+            "Tilemap 들의 정보를 저장합니다.")]
+    [Tooltip("데이터를 받아올 현재 타일 맵")]
     [SerializeField] private Tilemap[] tilemapsForRound;
 
-
+    // [Tooltip("")]
     /// <summary>
     /// 해당 라운드 안에서 등장하는 미리 설치될 특별한 기믹 블럭 리스트 입니다.
     /// </summary>
+    [Header("====라운드에서 등장할 {기믹 블럭} 리스트====\n" +
+            "속성 들이 등록되는 순서에 유의해야 합니다.")]
+    [Tooltip("해당 라운드 안에서 등장하는 미리 설치될 특별한 기믹 블럭 리스트 입니다.")]
     [SerializeField] private GameObject[] specialBlockForRound;
 
 
     /// <summary>
     /// 해당 라운드 안에서 등장하는 미리 설치될 특별한 기믹 블럭의 좌표 리스트 입니다.
     /// </summary>
+    [Tooltip("해당 라운드 안에서 등장하는 미리 설치될 특별한 기믹 블럭의 좌표 리스트 입니다.")]
     [SerializeField] private Vector3[] specialBlockPositionForRound;
 
     /// <summary>
@@ -188,7 +197,10 @@ public class SaveStageRoundData : MonoBehaviour
     /// 
     /// 추후 String으로 받아올 수 도 있습니다.
     /// </summary>
+    [Tooltip("해당 라운드 안에서 등장하는 미리 설치될 특별한 기믹 블럭의 특별한 데이터 입니다.\r\n  ex). 스위치 블럭의 경우, 감지될 콜라이더의 임계치\r\n   \r\n  추후 String으로 받아올 수 도 있습니다.")]
     [SerializeField] private int[] specialBlockSpecialDataForRound;
+    // [Space(3)]
+
 
 
     /// <summary>
@@ -196,37 +208,50 @@ public class SaveStageRoundData : MonoBehaviour
     /// 
     /// 배열의 길이가 해당 라운드에서 사용 가능한 블럭의 수가 됩니다.
     /// </summary>
+    [Header("====라운드에서 사용할 {블럭} 리스트====\n" +
+            "속성 들이 등록되는 순서에 유의해야 합니다.")]
+    [Tooltip("현재 라운드에서 사용할 블럭 정보 index\r\n   \r\n 배열의 길이가 해당 라운드에서 사용 가능한 블럭의 수가 됩니다.")]
     [SerializeField] private Button[] blockGeneratorForRoundData;
 
     /// <summary>
     /// 라운드에서 사용될 블럭의 갯수<br/>
     /// blockGeneratorForRoundData에 등록된 순서대로 동일하게 위치를 등록해주어야 합니다.
     /// </summary>
+    [Tooltip("라운드에서 사용될 블럭의 갯수<br/>\r\n blockGeneratorForRoundData에 등록된 순서와 동일하게 '블럭의 수' 속성을 등록해주어야 합니다.")]
     [SerializeField] private int[] blockAmountForRoundData;
+    // [Space(3)]
+
 
 
     /// <summary>
     /// 라운드에서 사용될 영웅의 종류 <br/>
     /// 배열의 길이가 해당 라운드에서 사용 될 영웅의 수가 됩니다. 
     /// </summary>
+    ///
+    [Header("====라운드에서 등장할 {영웅} 리스트====\n" +
+            "속성 들이 등록되는 순서에 유의해야 합니다.")]
+    [Tooltip("해당 라운드 안에서 등장하는 영웅 리스트 입니다.")]
     [SerializeField] private GameObject[] heroForRoundData;
 
     /// <summary>
     /// 라운드에서 사용될 영웅의 초기 위치 변수<br/>
     /// heroForRoundData에 등록된 순서대로 동일하게 위치를 등록해주어야 합니다.
     /// </summary>
+    [Tooltip("라운드에서 사용될 영웅의 초기 위치 변수<br/>\r\nheroForRoundData에 등록된 순서대로 동일하게 등록해주어야 합니다.")]
     [SerializeField] private Vector3[] heroPositionForRoundData;
 
     /// <summary>
     /// 라운드에서 사용될 영웅의 방향 <br/>
     /// heroForRoundData에 등록된 순서대로 동일하게 위치를 등록해주어야 합니다.
     /// </summary>
+    [Tooltip("라운드에서 사용될 영웅의 방향\nheroForRoundData에 등록된 순서대로 동일하게 등록해주어야 합니다.")]
     [SerializeField] private bool[] characterDirectionForRoundData;
 
     /// <summary>
     /// 라운드에서 사용될 영웅의 기본 체력 <br/>
     /// heroForRoundData에 등록된 순서대로 동일하게 위치를 등록해주어야 합니다.
     /// </summary>
+    [Tooltip("라운드에서 사용될 영웅의 기본 체력\nheroForRoundData에 등록된 순서대로 동일하게 등록해주어야 합니다.")]
     [SerializeField] private int[] characterHpForRoundData;
 
 
@@ -234,18 +259,23 @@ public class SaveStageRoundData : MonoBehaviour
     /// 라운드에서 사용될 몬스터의 종류 <br/>
     /// 배열의 길이가 해당 라운드에서 사용 될 영웅의 수가 됩니다. 
     /// </summary>
+    [Header("====라운드에서 등장할 {몬스터} 리스트====\n" +
+            "속성 들이 등록되는 순서에 유의해야 합니다.")]
+    [Tooltip("라운드에서 등장할 몬스터의 종류")]
     [SerializeField] private GameObject[] monsterForRoundData;
 
     /// <summary>
     /// 라운드에서 사용될 몬스터의 초기 위치 변수<br/>
-    /// monsterForRoundData 등록된 순서대로 동일하게 위치를 등록해주어야 합니다.
+    /// monsterForRoundData 등록된 순서와 동일하게 등록해주어야 합니다.
     /// </summary>
+    [Tooltip("라운드에서 사용될 몬스터의 초기 위치 변수\nmonsterForRoundData 등록된 순서와 동일하게 등록해주어야 합니다.")]
     [SerializeField] private Vector3[] monsterPositionForRoundData;
 
     /// <summary>
     /// 라운드에서 사용될 몬스터의 방향 <br/>
     /// monsterForRoundData 등록된 순서대로 동일하게 위치를 등록해주어야 합니다.
     /// </summary>
+    [Tooltip("몬스터의 방향\nmonsterForRoundData 등록된 순서와 동일하게 등록해주어야 합니다.")]
     [SerializeField] private bool[] monsterDirectionForRoundData;
 
 
@@ -254,6 +284,10 @@ public class SaveStageRoundData : MonoBehaviour
     /// 라운드에서 사용될 목표지점의 종류 <br/>
     /// 배열의 길이가 해당 라운드에서 사용 될 목표의 수가 됩니다.  (일반 적으론 1개 입니다)
     /// </summary>
+    [Header("====라운드에서 등장할 {목표 지점} 리스트====\n" +
+            "속성 들이 등록되는 순서에 유의해야 합니다.")]
+    [Tooltip("라운드에서 사용될 목표지점의 종류\n" +
+             "배열의 길이가 해당 라운드에서 사용 될 목표의 수가 됩니다.  (일반 적으론 1개 입니다)")]
     [SerializeField] private GameObject[] goalForRoundData;
 
 
@@ -262,6 +296,7 @@ public class SaveStageRoundData : MonoBehaviour
     /// 여러 곳이 존재할 수 있기에 배열로 선언했으나
     /// 기획 방향에 따라 달라질 수 있습니다.
     /// </summary>
+    [Tooltip("라운드에서 해당 게임의 목표가 있는 위치 입니다.\ngoalForRoundData 등록된 순서와 동일하게 등록해주어야 합니다.")]
     [SerializeField] private Vector3[] goalPositionForRound;
 
 
@@ -269,6 +304,8 @@ public class SaveStageRoundData : MonoBehaviour
     /// 라운드에서 카메라의 초기 위치<br/>
     /// 카메라는 1개만 존재합니다.
     /// </summary>
+    [Header("====라운드의 {카메라} 속성====")]
+    [Tooltip("라운드에서 카메라의 초기 위치")]
     [SerializeField] private Vector3 cameraPositionForRound;
 
 
@@ -277,10 +314,9 @@ public class SaveStageRoundData : MonoBehaviour
     /// 그 때 경유할 경유지 입니다.
     /// 없을 수 도 있습니다.
     /// </summary>
+    [Tooltip("게임이 처음으로 시작할 시 목표를 따라 카메라 무빙을 하게 되는데,\n그 때 경유할 경유지 리스트 입니다.\n" +
+             "경유지의 '처음'과 '끝'은 각각 영웅의 초기 위치와 목표 지점 위치 입니다.")]
     [SerializeField] private Vector3[] cameraStopOverPointForRound;
-
-
-
 
 
     // 앞으로 더욱 추가될 예정 입니다.
