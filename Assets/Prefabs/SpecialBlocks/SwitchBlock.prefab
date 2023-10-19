@@ -251,14 +251,14 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1636236163
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1884572883, guid: 0e4b2bca949b7a0449d0985f6821612b, type: 3}
+  m_Sprite: {fileID: 828892763, guid: e57889faec985e8458bbdad85627486a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.125, y: 1.125}
+  m_Size: {x: 1.024, y: 1.024}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -281,8 +281,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.125, y: 1.125}
-    newSize: {x: 1.125, y: 1.125}
+    oldSize: {x: 1.024, y: 1.024}
+    newSize: {x: 1.024, y: 1.024}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -300,7 +300,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6613888793333142605}
   - component: {fileID: 6613888793333142604}
-  - component: {fileID: 773263034}
   m_Layer: 0
   m_Name: sensor
   m_TagString: Untagged
@@ -349,25 +348,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0.1
---- !u!114 &773263034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6613888793333142607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d1186a24fbc8584393a35b1642a6939, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  switchBlockSpriteRenderer: {fileID: 6613888792588672064}
-  onActive: {fileID: -189979787, guid: 0e4b2bca949b7a0449d0985f6821612b, type: 3}
-  disActive: {fileID: 1884572883, guid: 0e4b2bca949b7a0449d0985f6821612b, type: 3}
-  circleProgress: {fileID: 1689581614}
-  initProgressColor: {r: 0, g: 0, b: 0, a: 0}
-  blinkRate: 1
-  sensorCount: 0
-  sensorPeriod: 1.7
-  switchActive: 0
-  currentCount: 0

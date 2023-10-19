@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 264137740305830539}
   - component: {fileID: 264137740305830540}
   - component: {fileID: 264137740305830541}
-  - component: {fileID: 2574154189985316582}
   m_Layer: 8
   m_Name: Hero[0]
   m_TagString: Hero
@@ -76,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: -280358683
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 130473518, guid: 0904a44688295f44c9144bf0e25a1527, type: 3}
+  m_Sprite: {fileID: 1492596029, guid: 46603d7155370484e852333469e47ce6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.6666667, y: 1.1333333}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -124,24 +123,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2574154189985316582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264137740305830536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21b8565b57093f349b0c1ac21ade4ecd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floorDepth: 0
-  heroDirection: 1
-  jumpForce: 7.5
-  jumpForwardSpeed: 0.5
-  blockLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  heroRaycast: 0
-  heroRayDepth: 1.5

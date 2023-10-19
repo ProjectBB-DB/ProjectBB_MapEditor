@@ -109,8 +109,20 @@ public class CameraData
 [System.Serializable]
 public class RoundDataStorage
 {
+    // 이전 스테입지와 다음 스테이지 체이닝을 위함
+    // 이전 스테이지 라운드
+    public int previousStage;
+    public int previousRound;
+
+    // 다음 스테이지 라운드
+    public int nextStage;
+    public int nextRound;
+
+    // 스테이지 - 라운드
     public int stage;
     public int round;
+
+
     public float floorDepth;
     public int succeedStandard;
 
@@ -158,9 +170,22 @@ public class SaveStageRoundData : MonoBehaviour
     [Header("<맵 생성을 위한 변수 등록>")]
 
     [Header("====라운드 속성====")]
+
+    // 이전 스테입지와 다음 스테이지 체이닝을 위함
+    // 이전 스테이지 라운드
+    [Tooltip("이전 '스테이지' 와 '라운드'")]
+    public int previousStage;
+    public int previousRound;
+
+    [Tooltip("다음 '스테이지' 와 '라운드'")]
+    // 다음 스테이지 라운드
+    public int nextStage;
+    public int nextRound;
+
     [Tooltip("현재 '스테이지' 와 '라운드'")]
-    [SerializeField] private int stage;
-    [SerializeField] private int round;
+    // 스테이지 - 라운드
+    public int stage;
+    public int round;
 
     [Tooltip("현재 라운드의 바닥 깊이")]
     [SerializeField] private float floorDepth;
@@ -333,8 +358,18 @@ public class SaveStageRoundData : MonoBehaviour
         RoundDataStorage _roundData = new RoundDataStorage();
 
         // 스테이지와 라운드를 업데이트 하여줍시다
+
+        _roundData.previousStage = previousStage;
+        _roundData.previousRound = previousRound;
+
+        _roundData.nextStage = nextStage;
+        _roundData.nextRound = nextRound;
+
+
         _roundData.stage = stage;
         _roundData.round = round;
+
+
         _roundData.floorDepth = floorDepth;
         _roundData.succeedStandard = succedStandard;
 
