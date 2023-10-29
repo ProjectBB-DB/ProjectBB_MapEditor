@@ -1,0 +1,161 @@
+.RD--valueBox {
+    flex-grow: 0;
+    align-self: auto;
+    justify-content: flex-start;
+    margin-left: 3px;
+    padding-left: 3px;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    margin-top: 7px;
+    padding-top: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+}
+
+.RD--valueBox Label {
+    -unity-font-style: bold;
+    -unity-font-definition: initial;
+    -unity-font: url('project://database/Assets/TextMesh%20Pro/Examples%20&%20Extras/Fonts/Roboto-Bold.ttf?fileID=12800000&guid=4beb055f07aaff244873dec698d0363e&type=3#Roboto-Bold');
+}
+
+.RD--valueGroup {
+    flex-grow: 0;
+    align-self: stretch;
+    padding-top: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    margin-top: 3px;
+    margin-right: 0;
+    margin-bottom: 3px;
+    margin-left: 0;
+    border-left-color: rgb(77, 77, 77);
+    border-right-color: rgb(77, 77, 77);
+    border-top-color: rgb(77, 77, 77);
+    border-bottom-color: rgb(77, 77, 77);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.RD--valueGroup-label {
+    justify-content: flex-end;
+    align-self: center;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    display: flex;
+}
+
+.RD--valueGroup:hover {
+    flex-grow: 0;
+    align-self: stretch;
+    padding-top: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    margin-top: 3px;
+    margin-right: 0;
+    margin-bottom: 3px;
+    margin-left: 0;
+    border-left-color: rgb(0, 255, 204);
+    border-right-color: rgb(0, 255, 204);
+    border-top-color: rgb(0, 255, 204);
+    border-bottom-color: rgb(0, 255, 204);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.RD--valueGroup:hover .RD--valueGroup-label {
+}
+
+.RD--valueGroup-unIm {
+    flex-grow: 0;
+    align-self: stretch;
+    padding-top: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    margin-top: 3px;
+    margin-right: 0;
+    margin-bottom: 3px;
+    margin-left: 0;
+    border-left-color: rgb(77, 77, 77);
+    border-right-color: rgb(77, 77, 77);
+    border-top-color: rgb(77, 77, 77);
+    border-bottom-color: rgb(77, 77, 77);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.RD--valueGroup-unIm:hover {
+    flex-grow: 0;
+    align-self: stretch;
+    padding-top: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    margin-top: 3px;
+    margin-right: 0;
+    margin-bottom: 3px;
+    margin-left: 0;
+    border-left-color: rgb(255, 146, 35);
+    border-right-color: rgb(255, 146, 35);
+    border-top-color: rgb(255, 146, 35);
+    border-bottom-color: rgb(255, 146, 35);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.RD--VectorSet > VisualElement {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.RD--VectorSet > VisualElement .unity-float-field {
+    flex-direction: row;
+    flex-grow: 0;
+    width: auto;
+    align-self: auto;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.RD--VectorSet > VisualElement .unity-float-field #unity-text-input {
+    flex-direction: row;
+    flex-grow: 1;
+    width: auto;
+    flex-shrink: 0;
+}

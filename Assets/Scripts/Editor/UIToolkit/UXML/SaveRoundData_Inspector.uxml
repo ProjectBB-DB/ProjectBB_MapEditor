@@ -1,0 +1,74 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Scripts/Editor/UIToolkit/USS/saveRoundInspector.uss?fileID=7433441132597879392&amp;guid=68ae6539019bcc14bbbf7d8e6424b3d9&amp;type=3#saveRoundInspector" />
+    <ui:VisualElement name="roundData--valueForRound" class="RD--valueGroup">
+        <ui:Label tabindex="-1" text="라운드 속성" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RD--vfr-label" class="RD--valueGroup-label" />
+        <ui:VisualElement name="RD--present" class="RD--valueBox" style="flex-grow: 0; flex-direction: row; justify-content: space-around;">
+            <ui:IntegerField label="현재 스테이지" value="0" name="RD--presentStage" binding-path="stage" focusable="true" style="flex-grow: 1;" />
+            <ui:IntegerField label="현재 라운드" value="0" name="RD--presentStage" binding-path="round" style="flex-grow: 1;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="RD--prev" class="RD--valueBox">
+            <ui:IntegerField label="이전 스테이지" value="-1" binding-path="previousStage" name="RD--prevStage" />
+            <ui:IntegerField label="이전 라운드" value="-1" binding-path="previousRound" name="RD--prevRound" />
+        </ui:VisualElement>
+        <ui:VisualElement name="RD--next" class="RD--valueBox" style="flex-grow: 0; align-self: auto; justify-content: flex-start; margin-left: 3px;">
+            <ui:IntegerField label="다음 스테이지" value="-1" binding-path="nextStage" name="RD--nextStage" />
+            <ui:IntegerField label="다음 라운드" value="-1" binding-path="nextRound" name="RD--prevRound" />
+        </ui:VisualElement>
+        <ui:VisualElement name="RD--FailSucceedstd" class="RD--valueBox" style="flex-grow: 0;">
+            <ui:FloatField label="낙사 판정 y좌표" value="-6" binding-path="floorDepth" name="RD--floorDepth" />
+            <ui:IntegerField label="라운드의 성공 기준&#10;(목표 도달에 성공한 영웅 수)" value="0" binding-path="succeedStandard" name="RD--succeedStd" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="roundData--tilemapForRound" class="RD--valueGroup">
+        <ui:Label tabindex="-1" text="등록된 타일 맵" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RD--tfr-label" class="RD--valueGroup-label" />
+        <ui:VisualElement name="RD--Tilemaps" class="RD--valueBox" style="flex-grow: 1; justify-content: center; align-items: center;">
+            <uie:PropertyField label="[GridSet]의 Tilemap" binding-path="tilemapsForRound" name="RD--TilemapArray" style="width: 90%;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="roundData--blockGeneratorForRound" class="RD--valueGroup">
+        <ui:Label tabindex="-1" text="플레이어에게 제공 될&#10;블럭 생성 버튼 목록" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RD--bgfr-label" class="RD--valueGroup-label" style="align-items: center; -unity-text-align: upper-center;" />
+        <ui:VisualElement name="RD--BlockGenerator" class="RD--valueBox" style="flex-grow: 1; justify-content: center; align-items: center;">
+            <uie:PropertyField name="RD--BlockGeneratorArray" label="라운드에서 사용&#10;블록 제네레이터" binding-path="blockGeneratorDataForRoundData" style="width: 90%; flex-grow: 0; flex-shrink: 1;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:Label tabindex="-1" text="이 곳 아래는 현재 구현 중으로,&#10;요소에 대한 속성 데이터를 등록해 줄 땐&#10;등록되는 순서에 유의하여야 합니다.&#10;&#10;발표 이후 &apos;블럭 생성 버튼 목록&apos; 과 같이&#10;사용자 친화적으로 업데이트 될 예정 입니다." parse-escape-sequences="true" display-tooltip-when-elided="true" name="NoticeLabel" style="-unity-text-align: upper-center; font-size: 15px; -unity-font-style: bold; -unity-font-definition: initial; -unity-font: url(&apos;project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&amp;guid=e3265ab4bf004d28a9537516768c1c75&amp;type=3#LiberationSans&apos;);" />
+    <ui:VisualElement name="roundData--heroForRound" class="RD--valueGroup-unIm">
+        <ui:Label tabindex="-1" text="라운드에 등장할 영웅 리스트" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RD--hfr-label" class="RD--valueGroup-label" style="align-items: center; -unity-text-align: upper-center;" />
+        <ui:VisualElement name="RD--Hero" class="RD--valueBox" style="flex-grow: 1; justify-content: center; align-items: center;">
+            <uie:PropertyField label="라운드에서 등장할 영웅" binding-path="heroForRoundData" name="RD--HeroArray" style="width: 90%;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="RD--HeroData" class="RD--valueBox" style="flex-grow: 1; justify-content: center; align-items: center;">
+            <ui:Label tabindex="-1" text="영웅 정보 등록하기&#10;&apos;리스트&apos;의 순서에 맞추어 속성을 등록하여 주세요" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RD--HD-label" class="RD--valueGroup-label" style="-unity-text-align: middle-center;" />
+            <uie:PropertyField label="영웅의 시작 위치(Vector3)" binding-path="heroPositionForRoundData" name="RD--HeroPositionArray" style="width: 90%;" />
+            <uie:PropertyField label="영웅의 flip 방향 " binding-path="characterDirectionForRoundData" name="RD--HeroDirectionArray" style="width: 90%;" />
+            <uie:PropertyField label="영웅의 체력(Int)" binding-path="characterHpForRoundData" name="RD--HeroHPArray" style="width: 90%;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="roundData--enemyForRound" class="RD--valueGroup-unIm">
+        <ui:Label tabindex="-1" text="라운드에 등장할 몬스터 리스트" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RD--efr-label" class="RD--valueGroup-label" style="align-items: center; -unity-text-align: upper-center;" />
+        <ui:VisualElement name="RD--Enemy" class="RD--valueBox" style="flex-grow: 1; justify-content: center; align-items: center;">
+            <uie:PropertyField label="라운드에서 등장할 몬스터" binding-path="monsterForRoundData" name="RD--EnemyArray" style="width: 90%;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="RD--EnemyData" class="RD--valueBox" style="flex-grow: 1; justify-content: center; align-items: center;">
+            <ui:Label tabindex="-1" text="몬스터 정보 등록하기&#10;&apos;리스트&apos;의 순서에 맞추어 속성을 등록하여 주세요" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RD--ED-label" class="RD--valueGroup-label" style="-unity-text-align: middle-center;" />
+            <uie:PropertyField label="몬스터의 시작 위치(Vector3)" binding-path="monsterPositionForRoundData" name="RD--EnemyPositionArray" style="width: 90%;" />
+            <uie:PropertyField label="몬스터의 &apos;flip&apos; 방향 " binding-path="monsterDirectionForRoundData" name="RD--EnemyDirectionArray" style="width: 90%;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="roundData--goalForRound" class="RD--valueGroup-unIm">
+        <ui:Label tabindex="-1" text="라운드에 등장할 목표지점 리스트" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RD--gfr-label" class="RD--valueGroup-label" style="align-items: center; -unity-text-align: upper-center;" />
+        <ui:VisualElement name="RD--Goal" class="RD--valueBox" style="flex-grow: 1; justify-content: center; align-items: center;">
+            <uie:PropertyField label="라운드에서 등장할 목표지점" binding-path="goalForRoundData" name="RD--GoalArray" style="width: 90%;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="RD--GoalData" class="RD--valueBox" style="flex-grow: 1; justify-content: center; align-items: center;">
+            <ui:Label tabindex="-1" text="목표 정보 등록하기&#10;&apos;리스트&apos;의 순서에 맞추어 속성을 등록하여 주세요" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RD--ED-label" class="RD--valueGroup-label" style="-unity-text-align: middle-center;" />
+            <uie:PropertyField label="목표지점의 위치(Vector3)" binding-path="goalPositionForRound" name="RD--GoalPositionArray" style="width: 90%;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="roundData--cameraStopOverForRound" class="RD--valueGroup-unIm">
+        <ui:Label tabindex="-1" text="라운드가 초기화 된 이후&#10;카메라가 맵 안에 순회할 경유지&#10;카메라의 초기 위치는 0번 영웅의 position이 됩니다. " parse-escape-sequences="true" display-tooltip-when-elided="true" name="RD--csoFR-label" class="RD--valueGroup-label" style="align-items: center; -unity-text-align: upper-center;" />
+        <ui:VisualElement name="RD--Camera" class="RD--valueBox" style="flex-grow: 1; justify-content: center; align-items: center;">
+            <uie:PropertyField label="카메라의 순회 경유지(Vector3)" binding-path="cameraStopOverPointForRound" name="RD--CameraStopOverPointArray" style="width: 90%;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
